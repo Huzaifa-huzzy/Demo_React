@@ -1,0 +1,74 @@
+/* CTA Section Styling */
+.cta-section {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  background-image: url('./images/ctaimg.jpg'); /* Replace with your own background image */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  padding-top: 100px; /* Add padding top to prevent overlap with fixed header */
+  opacity: 0; /* Initially hide */
+  transition: opacity 1s ease-out; /* Transition for fade-in effect */
+}
+
+/* Fade-in effect when the element comes into view */
+.cta-section.fade-in {
+  opacity: 1; /* Make visible */
+}
+
+/* CTA Overlay */
+.cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px); /* Apply blur effect to the background */
+}
+
+/* CTA Content */
+.cta-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* CTA Title */
+.cta-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* CTA Description */
+.cta-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e67e22; /* Slightly darker shade */
+  transform: scale(1.05); /* Subtle scaling on hover */
+}

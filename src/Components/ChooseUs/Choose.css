@@ -1,0 +1,154 @@
+/* WhyChooseUs.css */
+.why-choose-us {
+    width: 80%;
+    margin: 50px auto; /* Center the section horizontally */
+    padding: 40px 0;
+    color: #fff;
+    text-align: center; /* Center the section title */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ff7f50;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Ensure the grid is centered in a row */
+.reason-cards {
+    display: flex; /* Use flexbox for a row layout */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Add space between the cards */
+}
+
+.reason-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+    width: 100%;
+    max-width: 250px; /* Limit the width of the cards */
+    position: relative;
+}
+
+.reason-card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.reason-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: drop-shadow(0 0 10px #ff7f50) drop-shadow(0 0 20px #ff7f50); /* Neon glowing effect */
+}
+
+.reason-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff7f50;
+}
+
+.reason-description {
+    font-size: 1.1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .reason-cards {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center the cards vertically */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .reason-title {
+        font-size: 1.4rem;
+    }
+
+    .reason-description {
+        font-size: 1rem;
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add animation class for items that should animate */
+.animate-up {
+    opacity: 0;  /* Initially hidden */
+    animation: fadeInUp 1s ease-out forwards;  /* Fade-in and move up */
+}
+
+.why-choose-us {
+    width: 80%;
+    margin: 50px auto;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ff7f50;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.reason-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.reason-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .reason-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .reason-title {
+        font-size: 1.4rem;
+    }
+
+    .reason-description {
+        font-size: 1rem;
+    }
+}

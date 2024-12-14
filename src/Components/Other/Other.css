@@ -1,0 +1,85 @@
+/* InfoSection.css */
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 80%;
+  height: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  opacity: 0; /* Initial state is invisible */
+  transform: translateX(-50px); /* Start slightly off-screen to the left */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth fade-in and slide-in effect */
+}
+
+
+/* When visible, the fade-in-left class will be added to trigger the animation */
+.info-section.fade-in-left {
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Slide in to the normal position */
+}
+
+.info-section .image-container {
+  flex: 1;
+  max-width: 50%; /* Ensure the image takes up half of the container */
+  overflow: hidden; /* Ensure no part of the image overflows */
+  border-radius: 200px; /* Rounded corners for the image container */
+}
+
+.info-section .car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container without distorting the image */
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.info-section .details-container {
+  flex: 1;
+  max-width: 50%;
+  padding-left: 30px;
+  color: #ddd; /* Lighter color for the text */
+}
+
+.info-section .section-title {
+  font-size: 2.5rem;
+  color: #ff7f50; /* Accent color for the title */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.info-section .section-description {
+  font-size: 1.2rem;
+  color: #bbb; /* Slightly lighter text for the description */
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* Hover effects on the section */
+.info-section:hover .details-container .section-description {
+  color: #fff; /* Change text color to white on hover */
+}
+
+
+
+@media (max-width: 768px) {
+  .info-section {
+    flex-direction: column; /* Stack the image and text vertically on smaller screens */
+    height: auto; /* Allow the height to be dynamic */
+  }
+
+  .info-section .image-container,
+  .info-section .details-container {
+    max-width: 100%;
+    margin-bottom: 20px; /* Space between image and text */
+  }
+
+  .info-section .section-title {
+    font-size: 2rem; /* Smaller title on mobile */
+  }
+
+  .info-section .section-description {
+    font-size: 1rem; /* Smaller text on mobile */
+  }
+}

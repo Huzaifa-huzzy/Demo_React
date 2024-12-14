@@ -1,0 +1,115 @@
+/* Reviews Slider Styling */
+.reviews-slider {
+  width: 80%;
+  margin: 50px auto;
+
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.slider-title {
+  font-size: 2.5rem;
+  color: #ff7f50;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.slider-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden; /* Ensures that only one review is shown at a time */
+}
+
+.review-card {
+  padding: 20px;
+  height: 200px;
+  text-align: center;
+  max-width: 500px;
+  transform: translateX(100%); /* Start off-screen */
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.review-header {
+  margin-bottom: 15px;
+}
+
+.reviewer-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff7f50;
+}
+
+.review-rating {
+  font-size: 1.4rem;
+  color: #ff7f50;
+}
+
+.review-text {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%); /* Vertically centers the buttons */
+  z-index: 10; /* Ensures buttons are always on top of the content */
+}
+
+.prev-btn,
+.next-btn {
+  background-color: transparent;
+  border: none;
+  color: #ff7f50;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Fade-In and Fade-Out Effects */
+.fade-in .review-card {
+  transform: translateX(0); /* Move into position */
+  opacity: 1; /* Fade-in */
+}
+
+.fade-out .review-card {
+  transform: translateX(-100%); /* Slide out */
+  opacity: 0; /* Fade-out */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .reviews-slider {
+    padding: 20px;
+  }
+
+  .slider-title {
+    font-size: 2rem;
+  }
+
+  .review-card {
+    max-width: 350px;
+  }
+
+  .review-text {
+    font-size: 1rem;
+  }
+}

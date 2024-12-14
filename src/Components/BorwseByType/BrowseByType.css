@@ -1,0 +1,118 @@
+/* General styling for the Browse by Type section */
+.browse-section {
+  padding: 50px 20px;
+  background-color: #121212;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  flex-direction: column;
+  opacity: 0; /* Start with opacity 0 */
+  transition: opacity 1s ease-out; /* Transition for fade-in effect */
+}
+
+/* Fade-in effect when the element becomes visible */
+.browse-section.fade-in {
+  opacity: 1; /* Make visible */
+}
+
+/* Browse container */
+.browse-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Browse title */
+.browse-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* Car type button container */
+.car-types {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  margin-bottom: 20px;
+}
+
+/* Individual car type buttons */
+.car-type-button {
+  padding: 12px 20px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  background-color: transparent; /* Remove background color */
+}
+
+/* Hover effect on button */
+.car-type-button:hover {
+  transform: scale(1.05);
+  color: #ff7f50; /* Change text color on hover */
+  border-color: #ff7f50; /* Change border color on hover */
+}
+
+/* Styling for the logos */
+.car-type-logo {
+  width: 35px; /* Set logo width to 35px */
+  height: 35px; /* Set logo height to 35px */
+  object-fit: contain; /* Ensures the logo maintains its aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on the logo */
+.car-type-logo:hover {
+  transform: scale(1.2); /* Enlarge logo on hover */
+  transform-origin: center center; /* Ensures smooth scaling from the center */
+}
+
+/* View All button */
+.view-all-btn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px; /* Add some space above the button */
+}
+
+/* Hover effect on the button */
+.view-all-btn:hover {
+  background-color: #ff7f50;
+  transform: scale(1.2);
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+/* Keyframe animation for fadeInBottom */
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); /* Start from 30px below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at its normal position */
+  }
+}
+
+/* Apply the fadeInBottom animation */
+.fadeInBottom {
+  animation-name: fadeInBottom;
+  animation-duration: 2s; /* Adjust duration as needed */
+  animation-timing-function: ease-out; /* Adjust timing function */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+}

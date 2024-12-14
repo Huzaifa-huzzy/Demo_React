@@ -1,0 +1,154 @@
+/* FeaturedCars.css */
+body {
+  background-color: #121212; /* Dark background for the whole page */
+  color: #fff;  /* White text color */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container{
+  width: 100%;
+  height: 100%;
+}
+
+.featured-cars-container {
+  width: 80%;           /* Set the container width to 80% of the screen */
+  margin: 0 auto;       /* Center the container horizontally */
+  padding: 40px;        /* Add padding for spacing */
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;       /* Larger title */
+  color: #ff7f50;        /* Accent color for the title */
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  justify-items: center;
+}
+
+.car-card {
+  width: 300px;           /* Set the width of each card to 300px */
+  height: 500px;          /* Set the height of each card to 500px */
+  background-color: #2a2a2a; /* Dark card background */
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative; /* This is important for positioning the overlay */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for the card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+  will-change: transform, box-shadow;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.6s ease-in-out; /* Fade-in transition */
+}
+
+.car-card.fade-in {
+  opacity: 1; /* Make the card visible when it enters the viewport */
+}
+
+.car-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ensure the image completely fills the card */
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the space */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.car-card:hover .car-image {
+  filter: blur(5px); /* Apply blur to the image on hover */
+  transform: scale(1.2); /* Slightly scale the image to make it feel more dynamic */
+}
+
+.car-info {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  z-index: 2; /* Make sure the text stays on top of the image */
+}
+
+.car-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ff7f50; /* Accent color for car names */
+  margin-bottom: 10px;
+}
+
+.car-price {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.car-details-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Darker overlay for better contrast */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.car-card:hover .car-details-overlay {
+  opacity: 1; /* Show the details overlay on hover */
+}
+
+.car-details {
+  color: #fff;
+  text-align: left;
+  padding: 20px;
+  max-width: 280px;
+  border-radius: 10px;
+  opacity: 0.95;
+}
+
+.car-details p {
+  font-size: 1.1rem;
+  color: #ddd; /* Lighter text color for other details */
+  margin: 10px 0;
+}
+
+.car-details p strong {
+  color: #ff7f50; /* Accent color for labels like Model, Year */
+}
+
+input[type="text"] {
+  padding: 12px;
+  font-size: 1rem;
+  width: 300px;
+  border: 2px solid #ff7f50;
+  border-radius: 5px;
+  background-color: #1f1f1f;
+  color: #fff;
+  margin: 10px 0;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #ff7f50;
+  background-color: #333;
+}
